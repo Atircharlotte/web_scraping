@@ -9,12 +9,15 @@ function App() {
   async function handleScrape() {
     try {
       //send post request to the server
-      const response = await axios.post('http://localhost:5000/scrape', url, {
-        headers: {
-          'Content-Type': 'application/json',
-          Accept: 'application/json',
-        },
-      });
+      const response = await axios.post(
+        'http://localhost:9000/scrape',
+        { url: url },
+        {
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        }
+      );
       setResult(response.data.result);
     } catch (error) {
       console.log('Error scraping:', error);
@@ -24,16 +27,20 @@ function App() {
     <div className="main">
       <div className="url--section">
         <h1>Web Scraping content generator</h1>
-        <label for="text">Enter URL:</label>
+        <label htmlFor="url">Enter URL:</label>
         <br />
         <input
+          id="url"
           type="text"
           value={url}
           onChange={(e) => setUrl(e.target.value)}
         />
         <button onClick={handleScrape}>Scrape Website</button>
       </div>
-      <div className="result">Scraping result: {result}</div>
+      <div className="result">
+        Scraping result: <br />
+        {result}
+      </div>
     </div>
   );
 }
