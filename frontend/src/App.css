@@ -1,10 +1,27 @@
 .main {
-  margin-left: 50px;
+  background: linear-gradient(to right, #d0f4ea 50%, #e8fcc2 50%);
+  overflow: hidden;
+  height: 100vh;
 }
+
+.title {
+  text-align: center;
+  font-size: 40px;
+  text-shadow: 5px 3px 2px #545f66;
+  color: white;
+}
+.top--section {
+  display: flex;
+}
+
 .url--section {
-  text-align: left;
+  margin-left: 100px;
 }
-.result {
-  text-align: left;
-  margin-top: 30px;
+
+.scraping--result {
+  margin-top: 100px;
+}
+.intro--section {
+  margin-left: 500px;
+  margin-bottom: 100px;
 }

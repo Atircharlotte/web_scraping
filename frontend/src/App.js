@@ -1,6 +1,7 @@
 import './App.css';
 import React, { useState } from 'react';
 import axios from 'axios'; // connect with backend
+import Intro from './elements/intro';
 
 function App() {
   const [url, setUrl] = useState('');
@@ -25,21 +26,31 @@ function App() {
   }
   return (
     <div className="main">
+      <h1 className="title">WebHarvestWizard</h1>
+      {/*url input section */}
       <div className="url--section">
-        <h1>Web Scraping content generator</h1>
-        <label htmlFor="url">Enter URL:</label>
-        <br />
-        <input
-          id="url"
-          type="text"
-          value={url}
-          onChange={(e) => setUrl(e.target.value)}
-        />
-        <button onClick={handleScrape}>Scrape Website</button>
-      </div>
-      <div className="result">
-        Scraping result: <br />
-        {result}
+        <div className="top--section">
+          <div className="left">
+            <h1>Magic!</h1>
+            <label htmlFor="url">Enter one URL:</label>
+            <input
+              id="url"
+              type="text"
+              value={url}
+              onChange={(e) => setUrl(e.target.value)}
+            />
+            <br />
+            <button onClick={handleScrape}>BOOM!</button>
+            {/*display scraping outcome */}
+            <div className="scraping--result">
+              <h1>Show Time!</h1>
+              <h4>title:</h4> {result}
+            </div>
+          </div>
+
+          {/*introduction section */}
+          <Intro />
+        </div>
       </div>
     </div>
   );

@@ -30,7 +30,8 @@ def scrape():
 
         #get the specific elements in html
         title = driver.title
-
+        #get the h1 element
+        heading = driver.find_element(By.TAG_NAME, 'h1');
 
         #close the webdriver
         driver.quit()
